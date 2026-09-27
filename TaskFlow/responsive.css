@@ -1,0 +1,172 @@
+```css
+/* ========================================
+   TABLET RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .add-task {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .add-task input {
+        grid-column: 1 / -1;
+    }
+
+    .add-task button {
+        min-height: 45px;
+    }
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+
+    /* Header */
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .logo h1 {
+        font-size: 23px;
+    }
+
+    .logo span {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+    }
+
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+
+    /* Welcome */
+
+    .welcome h2 {
+        font-size: 24px;
+    }
+
+    .welcome p {
+        font-size: 13px;
+    }
+
+
+    /* Progress */
+
+    .progress-card {
+        padding: 20px;
+    }
+
+    .progress-percent {
+        font-size: 21px;
+    }
+
+
+    /* Add Task */
+
+    .add-task {
+        grid-template-columns: 1fr;
+
+        padding: 12px;
+
+        gap: 10px;
+    }
+
+    .add-task input {
+        grid-column: auto;
+    }
+
+    .add-task input,
+    .add-task select {
+        width: 100%;
+    }
+
+    .add-task button {
+        width: 100%;
+        min-height: 45px;
+    }
+
+
+    /* Filters */
+
+    .filters {
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+
+        padding: 8px 15px;
+    }
+
+
+    /* Task Card */
+
+    .task-card {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+    .task-title {
+        font-size: 14px;
+    }
+
+    .task-meta {
+        gap: 5px;
+    }
+
+    .category,
+    .priority {
+        font-size: 10px;
+
+        padding: 3px 7px;
+    }
+
+
+    /* Delete Button */
+
+    .delete-btn {
+        font-size: 16px;
+    }
+
+
+    /* Empty Message */
+
+    .empty-message {
+        padding: 40px 15px;
+    }
+
+    .empty-icon {
+        font-size: 45px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        margin-top: 30px;
+
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,615 @@
+```css
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7c3aed;
+    --secondary: #a855f7;
+    --accent: #ec4899;
+
+    --text: #1f2937;
+    --text-light: #6b7280;
+
+    --card: rgba(255, 255, 255, 0.75);
+    --border: rgba(255, 255, 255, 0.4);
+
+    --background: #f5f3ff;
+
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #f5f3ff,
+        #fdf2f8,
+        #ede9fe
+    );
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    transition: background 0.5s ease,
+                color 0.5s ease;
+}
+
+
+/* ========================================
+   BACKGROUND ANIMATION
+======================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+.background span {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        rgba(124, 58, 237, 0.15),
+        rgba(236, 72, 153, 0.15)
+    );
+
+    filter: blur(5px);
+
+    animation: float 10s infinite ease-in-out;
+}
+
+.background span:nth-child(1) {
+    top: 5%;
+    left: 5%;
+}
+
+.background span:nth-child(2) {
+    top: 50%;
+    left: 80%;
+
+    animation-delay: 2s;
+}
+
+.background span:nth-child(3) {
+    top: 70%;
+    left: 20%;
+
+    animation-delay: 4s;
+}
+
+.background span:nth-child(4) {
+    top: 20%;
+    left: 70%;
+
+    animation-delay: 6s;
+}
+
+.background span:nth-child(5) {
+    top: 80%;
+    left: 60%;
+
+    animation-delay: 8s;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -50px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    position: relative;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+
+    animation: slideDown 0.8s ease;
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo span {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.logo h1 {
+    font-size: 28px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Theme Button */
+
+.theme-btn {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--card);
+
+    backdrop-filter: blur(15px);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+
+/* ========================================
+   WELCOME
+======================================== */
+
+.welcome {
+    margin-bottom: 25px;
+
+    animation: fadeUp 0.8s ease;
+}
+
+.welcome h2 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.welcome p {
+    color: var(--text-light);
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   PROGRESS CARD
+======================================== */
+
+.progress-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1s ease;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.progress-info h3 {
+    font-size: 17px;
+}
+
+.progress-info p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+.progress-percent {
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: rgba(124, 58, 237, 0.12);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    transition: width 0.6s ease;
+}
+
+
+/* ========================================
+   ADD TASK
+======================================== */
+
+.add-task {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr auto;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 20px;
+
+    animation: fadeUp 1.1s ease;
+}
+
+.add-task input,
+.add-task select,
+.search-section input {
+    border: none;
+
+    outline: none;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.add-task input:focus,
+.add-task select:focus,
+.search-section input:focus {
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.add-task button {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 0 20px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    transition: 0.3s;
+}
+
+.add-task button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search-section {
+    margin-bottom: 15px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.search-section input {
+    width: 100%;
+
+    background: var(--card);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid var(--border);
+}
+
+
+/* ========================================
+   FILTERS
+======================================== */
+
+.filters {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    animation: fadeUp 1.3s ease;
+}
+
+.filter-btn {
+    border: none;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    background: var(--card);
+
+    color: var(--text-light);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+}
+
+
+/* ========================================
+   TASK CARD
+======================================== */
+
+.task-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    animation: taskAppear 0.5s ease;
+
+    transition: 0.3s;
+}
+
+.task-card:hover {
+    transform: translateY(-4px) scale(1.01);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Checkbox */
+
+.task-check {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition: 0.3s;
+}
+
+.task-check:hover {
+    transform: scale(1.15);
+}
+
+.task-card.completed .task-check {
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* Task Content */
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: 600;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+
+    transition: 0.3s;
+}
+
+.task-card.completed .task-title {
+    text-decoration: line-through;
+
+    opacity: 0.5;
+}
+
+.task-meta {
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* Category */
+
+.category {
+    padding: 4px 9px;
+
+    border-radius: 10px;
+
+    background: rgba(124, 58, 237, 0.1);
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* Priority */
+
+.p
+```
